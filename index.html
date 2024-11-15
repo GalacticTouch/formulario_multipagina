@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Multipágina</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="datosPersonalesForm" style="display: block;">
+      <h2>Datos Personales</h2>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Nombre">
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" placeholder="Apellido">
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" placeholder="Edad">
+      <button onclick="guardarDatosPersonales()">Siguiente</button>
+    </div>
+
+    <div id="familiaresForm" style="display: none;">
+      <h2>Familiares</h2>
+      <button onclick="agregarFamiliar()">Agregar Familiar</button>
+      <div id="familiaresContainer"></div>
+      <button onclick="cambiarPagina('familiaresForm', 'condicionesSaludForm')">Siguiente</button>
+    </div>
+
+    <div id="condicionesSaludForm" style="display: none;">
+      <h2>Condiciones de Salud</h2>
+      <button onclick="agregarCondicion()">Agregar Condición</button>
+      <div id="condicionesContainer"></div>
+      <button onclick="cambiarPagina('condicionesSaludForm', 'internamientosForm')">Siguiente</button>
+    </div>
+
+    <div id="internamientosForm" style="display: none;">
+      <h2>Internamientos</h2>
+      <button onclick="agregarInternamiento()">Agregar Internamiento</button>
+      <div id="internamientosContainer"></div>
+      <button onclick="mostrarResumen()">Finalizar</button>
+    </div>
+
+    <div id="presentarDatos" style="display: none;">
+      <h2>Datos Registrados</h2>
+      <pre id="datosResumen"></pre>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
